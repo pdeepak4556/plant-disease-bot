@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function submitForm() {
+            document.getElementById("predictionForm").submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/home"><p>VI<span>BOT</span></p></a>
+        </div>
+        <form action="/logout" method="POST" class="sign-out-form">
+            <input type="submit" value="Logout" class="btn-solid" name="logout" />
+        </form>
+    </div>
+
+    <div class="container">
+        {% if encoded_img %}
+            <img src="data:image/jpeg;base64,{{ encoded_img }}" alt="Predicted Image" class="predicted-image">
+        {% endif %}
+        <form id="predictionForm" action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" id="uploadBtn" name="image" onchange="submitForm()">
+            <label for="uploadBtn"><i class="fa-solid fa-upload"></i>Upload File</label>
+        </form>
+        <div id="result" class="result">
+            {% if plant_name %}
+                <p>Plant Name: {{ plant_name }}</p>
+                <p>Disease Name: {{ disease_name }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

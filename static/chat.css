@@ -1,0 +1,126 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    justify-content: space-between;
+}
+
+.container{
+    padding-top: 10vb;
+    background: none;
+    display:flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+
+    overflow:scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.image{
+    width: 15vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 25vw;
+
+    width: fit-content;
+    max-width: 25vw;
+
+    border-color: rgb(65, 65, 65);
+    border-style: solid;
+    border-width: 8px;
+
+    border-radius: 15px;
+    align-self: flex-end;
+}
+
+.bot{
+    color: rgb(255, 255, 255);
+    background-color: rgb(65, 65, 65);
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25vw;
+
+    width: fit-content;
+    word-wrap: break-word;
+    max-width: 30vw;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    align-self: flex-start;
+
+    text-align: left;
+}
+
+.user{
+    color: rgb(255, 255, 255);
+    background-color: rgb(65, 65, 65);
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 25vw;
+
+    width: fit-content;
+    max-width: 25vw;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    align-self: flex-end;
+    
+    text-align: right;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    margin-bottom: 30px;
+}
+
+.input{
+    width: 100%;
+
+    margin-left: 20vw;
+    margin-right: 20vw;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+textarea.inputbox {
+    border: none;
+    background-color:rgb(75, 75, 75);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    border-radius: 10px;
+
+    width: 100%;
+    resize: none; /* Prevents manual resizing */
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+
+    overflow: hidden; /* Hides scrollbars */
+    word-wrap: break-word;
+
+    max-height: 20vh;
+}
+
+.submit{
+    border: none;
+    outline: none;
+    background-color:rgb(75, 75, 75);
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+}

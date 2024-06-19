@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block header %}
+<link rel="stylesheet" href="../static/profile.css">
+{% endblock %}
+
+{% block body %}
+<div class="updatepassword">
+    <form method="POST" class="updatepassword-form">
+        <h2 class="title">Profile</h2>
+        <p class="error">{{message}}</p>
+        <p class="status">{{status}}</p>
+        <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="{{ username }}" name="username" />
+        </div>
+        <div class="input-field">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="{{ email }}" name="email" />
+        </div>
+        <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" name="password">
+        </div>
+        <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Confirm Password" name="confirm_password">
+        </div>
+        <input type="submit" class="btn" value="Update" name="update">
+    </form>
+</div>
+{% endblock %}
