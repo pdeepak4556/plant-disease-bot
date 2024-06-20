@@ -166,9 +166,9 @@ def chat():
     with open("images/photo.jpg", "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
-    messages = [['bot', 'text', 'Hello, How may I assist you today?'],
-                ['user', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
-                ['bot', 'text', 'Sure, send me the plant image.'],
+    messages = [['bot', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
+                ['user', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
+                ['bot', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
                 ['user', 'image', encoded_string],
                 ['bot', 'text', 'Hello, How may I assist you today?'],
                 ['user', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
@@ -255,7 +255,7 @@ def predict():
     return redirect(url_for('home'))'''
 
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))

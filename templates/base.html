@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViBot</title>
     <link rel="stylesheet" href="../static/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,18 +13,21 @@
 
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="{{ url_for('chat') }}"><p>VI<span>BOT</span></p></a>
+    <div class="navbar" id="navbar">
+        <div class="short-logo" id="short-logo">V<span>B</span></div>
+        <div class="logo" id="logo">
+            <a href="{{ url_for('chat') }}"><p id="logo-text">VI<span>BOT</span></p></a>
         </div>
-        <form action="/logout" method="POST" class="sign-out-form">
-            <a href="{{ url_for('profile') }}" class="profile"><i class="fa-solid fa-user" style="color: #ffffff;"></i><span class="profile-text">Profile</span></a>
-            <input type="submit" value="Logout" class="btn-solid" name="logout" />
-        </form>
+        <div class="buttons">
+            <a href="{{ url_for('profile') }}" class="button" id="button1"><i class="fa-solid fa-user"></i><span class="button-text">Profile</span></a>
+            <a href="{{ url_for('logout') }}" class="button" id="button2"><i class="fa-solid fa-right-from-bracket logout_logo"></i><span class="button-text">Logout</span></a>
+        </div>
     </div>
 
     {% block body %}
 
     {% endblock %}
+
+    <script src="../static/base.js"></script>
 </body>
 </html>

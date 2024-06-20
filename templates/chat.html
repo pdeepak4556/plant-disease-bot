@@ -19,15 +19,16 @@
             {%  endif %}
 
             {% if message[1] == 'image' %}
-                <img src="data:image/jpeg;base64, {{ message[2] }}" class="image">
+                <div class="imagediv">
+                    <img src="data:image/jpeg;base64, {{ message[2] }}" class="image">
+                </div>
             {%  endif %}
-
         {% endfor %}
     </div>
 
     <form method="POST" action="/" class="form">
         {{ form.hidden_tag() }}
-        <div class="input">
+        <div class="input" id="input">
             {{ form.text_input(class='inputbox', rows='1', id='autoresizing') }}
             <button type="submit" class="submit"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
         </div>
