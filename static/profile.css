@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body,
-input {
-font-family: "Poppins", sans-serif;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -25,54 +14,67 @@ select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+.updatepassword{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .updatepassword-form{
-    height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
 }
 
 .title {
-font-size: 2.2rem;
-color: #fff;
-margin-bottom: 10px;
+  font-size: 35px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-field {
-max-width: 380px;
-width: 100%;
-background-color: #f0f0f0;
-margin: 10px 0;
-height: 55px;
-border-radius: 55px;
-display: grid;
-grid-template-columns: 15% 85%;
-padding: 0 0.4rem;
-position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 1000px;
 }
 
 .input-field i {
-text-align: center;
-line-height: 55px;
-color: #acacac;
-transition: 0.5s;
-font-size: 1.1rem;
+  color: #acacac;
+  font-size: 15px;
+  margin-left: 20px;
 }
 
 .input-field input {
-background: none;
-outline: none;
-border: none;
-line-height: 1;
-font-weight: 600;
-font-size: 1.1rem;
-color: #333;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  background: none;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
 }
 
 .input-field input::placeholder {
-color: #aaa;
-font-weight: 500;
+  color: #aaa;
+  font-weight: 500;
+}
+
+p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: center;
 }
 
 .error {
@@ -81,24 +83,97 @@ font-weight: 500;
 
 .status {
     color:green;
-  }
+}
 
-.btn {
-    width: 150px;
-    background-color: #0c6a53;
-    border: none;
-    outline: none;
-    height: 49px;
-    border-radius: 49px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.5s;
-    font-size: 1rem;
+.btn-text{
+  background-color: #0c6a53;
+  border-radius: 1000px;
+  border: none;
+  
+  transition: 0.5s;
+  
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+
+  cursor: pointer;
+
+  padding: 15px 25px 15px 25px;
+  margin-top: 20px;
 }
     
-.btn:hover {
-background-color: #0f7e62;
+.btn-text:hover {
+  background-color: #0f7e62;
+}
+
+@media (max-width: 500px) {
+  .updatepassword-form{
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .updatepassword-form{
+    width: 250px;
+  }
+
+  .title{
+    font-size: 25px;
+  }
+
+  .input-field i {
+    color: #acacac;
+    font-size: 13px;
+    margin-left: 15px;
+  }
+
+  .input-field input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .btn-text{
+    font-size: 15px;
+    padding: 10px 15px 10px 15px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .updatepassword-form{
+    width: 600px;
+  }
+
+  .title{
+    font-size: 55px;
+  }
+
+  .input-field i {
+    color: #acacac;
+    font-size: 25px;
+    margin-left: 30px;
+  }
+
+  .input-field{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .input-field input {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    font-size: 25px;
+    color: #333;
+  }
+
+  .btn-text{
+    font-size: 25px;
+    padding: 20px 25px 20px 25px;
+    margin-top: 40px;
+  }
 }

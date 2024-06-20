@@ -71,6 +71,8 @@ def login():
             hashed_password = process_password(password, confirm_password)
 
             users = mongo.db.users
+            messages = mongo.db.messages
+
             existing_username = users.find_one({'username': username})
             existing_email = users.find_one({'email': email})
 
@@ -83,6 +85,10 @@ def login():
                 return render_template('login.html', signupmessage=message)
 
             users.insert_one({'username': username, 'email': email, 'password': hashed_password})
+
+            message_count = 0
+            messages.insert_one({'username:': username, 'message_count': message_count})
+
             return render_template('signup_success.html')
 
         elif 'login' in request.form:
@@ -117,7 +123,6 @@ def profile():
 
     if request.method == 'POST':
         new_username = request.form['username']
-        print("new username: ", new_username)
         new_email = request.form['email']
         new_password = request.form['password']
         new_confirm_password = request.form['confirm_password']
@@ -166,7 +171,7 @@ def chat():
     with open("images/photo.jpg", "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
-    messages = [['bot', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
+    texts = [['bot', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
                 ['user', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
                 ['bot', 'text', 'I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually. I need assistance in identifying a plant disease. It is very hard for me to find it manually.'],
                 ['user', 'image', encoded_string],
@@ -180,7 +185,7 @@ def chat():
         text = form.text_input.data
         pass
 
-    return render_template('chat.html', messages=messages, form=form)
+    return render_template('chat.html', messages=texts, form=form)
 
 
 '''@app.route('/predict', methods=['POST'])
